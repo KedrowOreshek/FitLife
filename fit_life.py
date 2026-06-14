@@ -13,15 +13,7 @@ def counting_bmi(user_weight, user_height):
 def counting_water(user_weight):
     water_needed_ml = user_weight * 30
 
-    return water_needed_ml
-
-# функция для заполнения и разделения
-def filling_the_void():
-    print("#" * 40)
-    print(" " * 15, "FitLife", " " * 15)
-    print("#" * 40)
-
-filling_the_void()  # заполняем
+    return round(water_needed_ml / 1000, 1)
 
 # 2. Сбор данных
 
@@ -40,8 +32,8 @@ while True:
 
 while True:
     try:
-        user_weight = float(input("Введите ваш вес(в кг): "))   # запрос веса 
-                                                            # тип переменной - float
+        user_weight = float(input("Введите ваш вес(в кг): "))# запрос веса 
+                                                             # тип переменной - float
         break
     except ValueError:
         print("Произошла ошибка! проверте ваш ввод!!")  # обработка ошибки 
@@ -53,8 +45,6 @@ while True:
         break
     except ValueError:
         print("Произошла ошибка! проверте ваш ввод!!")  # обработка ошибки
-        
-filling_the_void()  # разделяем
 
 # 3. вывод резултатов
 
@@ -63,9 +53,7 @@ print(
     f'Вот ваш отчет: \n'
     f'Ваш возраст: {user_age}\n'
     f'ИМТ(индекс массы тела): {counting_bmi(user_weight, user_height)} кг/м²\n'
-    f'Ваша норма воды: {counting_water(user_weight)} мл или {counting_water(user_weight) / 1000} л'
+    f'Ваша норма воды: {counting_water(user_weight)} л'
 )
-
-filling_the_void() # разделяем
 
 print("Расчет окончен. Будьте здоровы!")
