@@ -1,26 +1,71 @@
 # Проект FitLife - MVP версия 1.0
 
 
-# 1. Знакомство
-# TODO: Спроси у пользователя имя и сохрани в переменную user_name
-# TODO: Спроси возраст и сохрани в переменную user_age (не забудь преобразовать в число)
+# 1. используемые функции
 
+# функция вычисления ИМТ
+def counting_bmi(user_weight, user_height):
+    user_bmi = user_weight/(user_height ** 2)
+
+    return round(user_bmi,1)
+
+# функция вычисления нормы воды
+def counting_water(user_weight):
+    water_needed_ml = user_weight * 30
+
+    return water_needed_ml
+
+# функция для заполнения и разделения
+def filling_the_void():
+    print("#" * 40)
+    print(" " * 15, "FitLife", " " * 15)
+    print("#" * 40)
+
+filling_the_void()  # заполняем
 
 # 2. Сбор данных
-# TODO: Запроси вес (в кг) и сохрани в user_weight (тип float)
-# TODO: Запроси рост (в метрах, например 1.75) и сохрани в user_height (тип float)
 
+# запрос имени
+user_name = input("Добро пожаловать в FitLife! как вас зовут?\n")
+user_name = user_name.title()   # преобразование если пользватель 
+                                # ввел имя/фамилию не с заглавной 
 
-# 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
-# Формула ИМТ: вес разделить на (рост в квадрате)
-# TODO: Рассчитай bmi (Индекс массы тела)
+# цикл для обработки ошибок, если ошибка, то возвращает к текущему запросу
+while True:
+    try:                                
+        user_age = int(input("Введите ваш возраст: "))  # запрос возраста
+        break
+    except ValueError:
+        print("Произошла ошибка! проверте ваш ввод!!")  # обработка ошибки 
 
+while True:
+    try:
+        user_weight = float(input("Введите ваш вес(в кг): "))   # запрос веса 
+                                                            # тип переменной - float
+        break
+    except ValueError:
+        print("Произошла ошибка! проверте ваш ввод!!")  # обработка ошибки 
 
-# Подсчет воды: вес * 30 мл
-# TODO: Рассчитай water_needed
+while True:
+    try:
+        user_height = float(input("Введите ваш рост(в метрах): "))  # запрос роста 
+                                                                # тип переменной - float
+        break
+    except ValueError:
+        print("Произошла ошибка! проверте ваш ввод!!")  # обработка ошибки
+        
+filling_the_void()  # разделяем
 
+# 3. вывод резултатов
 
-# 4. Вывод красивого результата
-# TODO: Используй f-строку, чтобы вывести приветствие, например: "Привет, Иван!"
-# TODO: Выведи возраст, ИМТ (округленный до 1 знака) и норму воды.
+print(
+    f'Привет, {user_name}!\n'
+    f'Вот ваш отчет: \n'
+    f'Ваш возраст: {user_age}\n'
+    f'ИМТ(индекс массы тела): {counting_bmi(user_weight, user_height)} кг/м²\n'
+    f'Ваша норма воды: {counting_water(user_weight)} мл или {counting_water(user_weight) / 1000} л'
+)
+
+filling_the_void() # разделяем
+
 print("Расчет окончен. Будьте здоровы!")
