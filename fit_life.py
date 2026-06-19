@@ -48,13 +48,15 @@ def counting_water(user_weight):
 
 # 3. вывод результатов
 
+bmi_result = counting_bmi(user_weight, user_height)
+water_result = counting_water(user_weight)
+
 print(
     f'Привет, {user_name}!\n'
     f'Вот ваш отчет: \n'
     f'Ваш возраст: {user_age}\n'
-    f'ИМТ(индекс массы тела): {counting_bmi(user_weight, user_height)} '
-    f'кг/м2\n'
-    f'Ваша норма воды: {counting_water(user_weight)} л'
+    f'ИМТ(индекс массы тела): {bmi_result} кг/м2\n'
+    f'Ваша норма воды: {water_result} л',
 )
 
 print("Расчет окончен. Будьте здоровы!")
