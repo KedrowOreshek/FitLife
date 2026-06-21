@@ -18,7 +18,7 @@ while True:
 while True:
     try:
         # запрос веса тип переменной - float
-        user_weight = float(input("Введите ваш вес(в кг, отделите десятичную долю точкой!): "))
+        user_weight = float(input("Введите ваш вес(в кг, пример: '60.2'!): "))
         break
     except ValueError:
         print("Произошла ошибка! проверте ваш ввод!!")
@@ -26,7 +26,7 @@ while True:
 while True:
     try:
         # запрос роста тип переменной - float
-        user_height = float(input("Введите ваш рост(в метрах, отделите десятичную долю точкой!): "))
+        user_height = float(input("Введите ваш рост(в метрах, пример: '1.7'!): "))
         break
     except ValueError:
         print("Произошла ошибка! проверте ваш ввод!!")
