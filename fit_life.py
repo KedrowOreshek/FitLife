@@ -54,7 +54,7 @@ bmi_result = counting_bmi(user_weight, user_height)
 water_result = counting_water(user_weight)
 
 print(f'Привет, {user_name}!')
-print(f'Вот ваш отчет: ')
+print('Вот ваш отчет: ')
 print(f'Ваш возраст: {user_age}')
 print(f'ИМТ(индекс массы тела): {bmi_result} кг/м2')
 print(f'Ваша норма воды: {water_result} л')
