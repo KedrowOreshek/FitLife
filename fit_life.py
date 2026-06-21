@@ -18,7 +18,7 @@ while True:
 while True:
     try:
         # запрос веса тип переменной - float
-        user_weight = float(input("Введите ваш вес(в кг, пример: '60.2'!): "))
+        user_weight = float(input("Введите ваш вес(в кг, разделение '.'): "))
         break
     except ValueError:
         print("Произошла ошибка! проверте ваш ввод!!")
@@ -26,7 +26,7 @@ while True:
 while True:
     try:
         # запрос роста тип переменной - float
-        user_height = float(input("Введите ваш рост(в метрах, пример: '1.7'!): "))
+        user_height = float(input("Введите ваш рост(в м, разделение '.'): "))
         break
     except ValueError:
         print("Произошла ошибка! проверте ваш ввод!!")
@@ -41,9 +41,9 @@ def counting_bmi(user_weight, user_height):
 
 
 def counting_water(user_weight):
+    """Функция вычисления нормы воды в литрах."""
     ml_water = 30
     ml_in_l = 1000
-    """Функция вычисления нормы воды в литрах."""
     water_needed_ml = user_weight * ml_water
     return round(water_needed_ml / ml_in_l, 1)
 
